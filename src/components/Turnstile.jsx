@@ -60,6 +60,12 @@ const Turnstile = forwardRef(function Turnstile({ action, onVerify, onError }, r
 
   useEffect(() => {
     if (!SITE_KEY) {
+      // Logged in production too, so this is diagnosable from a live site.
+      console.error(
+        'Turnstile: VITE_TURNSTILE_SITE_KEY is missing from this build. ' +
+          'Vite inlines VITE_* variables at build time, so setting it in the ' +
+          'hosting dashboard requires a redeploy to take effect.'
+      );
       setStatus('unconfigured');
       return undefined;
     }
@@ -117,15 +123,29 @@ const Turnstile = forwardRef(function Turnstile({ action, onVerify, onError }, r
     return () => clearTimeout(id);
   }, [solved, status]);
 
-  // A missing site key is a build/config problem, not something a visitor can
-  // fix. Say so in development and stay silent in production, where the
-  // server will reject the submission anyway.
+  // A missing site key is a build-time configuration problem. Never render
+  // nothing here: the submit button stays disabled without a token, so a
+  // silent return leaves the visitor with a dead form and no explanation.
   if (status === 'unconfigured') {
-    return import.meta.env.DEV ? (
-      <p className="rounded-md bg-amber-50 px-3 py-2 text-sm text-amber-800">
-        VITE_TURNSTILE_SITE_KEY is not set, so the bot check cannot render.
-      </p>
-    ) : null;
+    return (
+      <div className="rounded-md bg-amber-50 px-3 py-2.5 text-sm text-amber-900">
+        {import.meta.env.DEV ? (
+          <>
+            <strong>VITE_TURNSTILE_SITE_KEY is not set.</strong> Add it to{' '}
+            <code>.env.local</code> and restart the dev server.
+          </>
+        ) : (
+          <>
+            The bot-protection check is unavailable, so this form cannot be submitted right now.
+            Please email us at{' '}
+            <a href={FALLBACK_EMAIL_HREF} className="font-medium underline">
+              {FALLBACK_EMAIL}
+            </a>
+            .
+          </>
+        )}
+      </div>
+    );
   }
 
   const failed = status === 'blocked' || (stalled && !solved);
