@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/brand/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VINFOTECH SOLUTION LLC - Innovative Technology Solutions</title>
+    <meta
+      name="description"
+      content="VINFOTECH SOLUTION LLC delivers cutting-edge software solutions, cybersecurity, and digital transformation services. 25+ years of experience, 300+ projects delivered."
+    />
+    <meta name="author" content="VINFOTECH SOLUTION LLC" />
+    <meta property="og:title" content="VINFOTECH SOLUTION LLC - Innovative Technology Solutions" />
+    <meta
+      property="og:description"
+      content="Transform your digital future with custom software development, cybersecurity, and technology consulting services."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/brand/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@vinfotechsolutions" />
+    <meta name="twitter:image" content="/brand/logo.png" />
+    <!--
+      Cloudflare Turnstile, loaded with explicit rendering so the React
+      component decides when and where the widget mounts. Without
+      render=explicit the script scans for .cf-turnstile at parse time, which
+      is before the SPA has rendered anything.
+    -->
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+      async
+      defer
+    ></script>
+
+    <!--
+      The splash below is inlined deliberately: it paints on the very first
+      frame, before the CSS bundle or any JS has downloaded, so the visitor
+      never sees a blank white page. src/splash.js fades it out once React has
+      mounted and the hero image has decoded.
+    -->
+    <style>
+      #app-splash {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        background: linear-gradient(135deg, #111827 0%, #1f2937 45%, #14532d 100%);
+        transition: opacity 0.6s ease, visibility 0.6s ease;
+      }
+      #app-splash.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+      #app-splash .splash-mark {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 120px;
+        height: 120px;
+      }
+      #app-splash .splash-ring {
+        position: absolute;
+        inset: 0;
+        border-radius: 9999px;
+        border: 2px solid rgba(34, 197, 94, 0.35);
+        animation: splash-ring 1.8s ease-out infinite;
+      }
+      #app-splash .splash-ring:nth-child(2) {
+        animation-delay: 0.6s;
+      }
+      #app-splash .splash-logo {
+        width: 76px;
+        height: auto;
+        filter: brightness(0) invert(1);
+        animation: splash-breathe 2.4s ease-in-out infinite;
+      }
+      #app-splash .splash-name {
+        font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.72);
+      }
+      #app-splash .splash-track {
+        width: 180px;
+        height: 2px;
+        overflow: hidden;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.14);
+      }
+      #app-splash .splash-bar {
+        display: block;
+        width: 40%;
+        height: 100%;
+        border-radius: 9999px;
+        background: linear-gradient(90deg, #22c55e, #4ade80);
+        animation: splash-sweep 1.15s ease-in-out infinite;
+      }
+      @keyframes splash-ring {
+        0% { transform: scale(0.72); opacity: 0.9; }
+        100% { transform: scale(1.25); opacity: 0; }
+      }
+      @keyframes splash-breathe {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.07); }
+      }
+      @keyframes splash-sweep {
+        0% { transform: translateX(-120%); }
+        100% { transform: translateX(320%); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #app-splash .splash-ring,
+        #app-splash .splash-logo,
+        #app-splash .splash-bar {
+          animation: none;
+        }
+        #app-splash .splash-bar {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <style>
+        #app-splash { display: none; }
+        html:not(.app-ready) body { overflow: auto !important; }
+      </style>
+    </noscript>
+
+    <div id="root"></div>
+
+    <script>
+      // Recorded at first paint so the splash can enforce a minimum visible time.
+      window.__splashStart = Date.now();
+
+      // Last-resort fallback: if the module bundle fails to load or throws
+      // before dismissing the splash, never leave the visitor staring at it.
+      setTimeout(function () {
+        var splash = document.getElementById('app-splash');
+        if (splash) splash.remove();
+        document.documentElement.classList.add('app-ready');
+      }, 8000);
+    </script>
+
+    <div id="app-splash" role="status" aria-label="Loading VINFOTECH SOLUTION LLC">
+      <div class="splash-mark">
+        <span class="splash-ring"></span>
+        <span class="splash-ring"></span>
+        <img class="splash-logo" src="/brand/logo.png" alt="" />
+      </div>
+      <p class="splash-name">VINFOTECH SOLUTION LLC</p>
+      <span class="splash-track"><span class="splash-bar"></span></span>
+    </div>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

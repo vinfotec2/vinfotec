@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.vinfotec.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://www.vinfotec.com/about</loc><priority>0.8</priority></url>
+  <url><loc>https://www.vinfotec.com/services</loc><priority>0.8</priority></url>
+  <url><loc>https://www.vinfotec.com/services/app-development</loc><priority>0.7</priority></url>
+  <url><loc>https://www.vinfotec.com/services/web-development</loc><priority>0.7</priority></url>
+  <url><loc>https://www.vinfotec.com/services/wordpress-development</loc><priority>0.7</priority></url>
+  <url><loc>https://www.vinfotec.com/services/salesforce-development</loc><priority>0.7</priority></url>
+  <url><loc>https://www.vinfotec.com/services/gen-ai-solutions</loc><priority>0.7</priority></url>
+  <url><loc>https://www.vinfotec.com/services/ui-ux-design</loc><priority>0.7</priority></url>
+  <url><loc>https://www.vinfotec.com/services/database-security</loc><priority>0.7</priority></url>
+  <url><loc>https://www.vinfotec.com/services/cybersecurity</loc><priority>0.7</priority></url>
+  <url><loc>https://www.vinfotec.com/portfolio</loc><priority>0.8</priority></url>
+  <url><loc>https://www.vinfotec.com/portfolio/ecommerce-platform</loc><priority>0.7</priority></url>
+  <url><loc>https://www.vinfotec.com/portfolio/fitness-tracker-app</loc><priority>0.7</priority></url>
+  <url><loc>https://www.vinfotec.com/portfolio/banking-dashboard</loc><priority>0.7</priority></url>
+  <url><loc>https://www.vinfotec.com/portfolio/healthcare-portal</loc><priority>0.7</priority></url>
+  <url><loc>https://www.vinfotec.com/portfolio/restaurant-ordering-system</loc><priority>0.7</priority></url>
+  <url><loc>https://www.vinfotec.com/portfolio/travel-companion-app</loc><priority>0.7</priority></url>
+  <url><loc>https://www.vinfotec.com/contact</loc><priority>0.8</priority></url>
+  <url><loc>https://www.vinfotec.com/faq</loc><priority>0.6</priority></url>
+  <url><loc>https://www.vinfotec.com/privacy</loc><priority>0.3</priority></url>
+  <url><loc>https://www.vinfotec.com/terms</loc><priority>0.3</priority></url>
+</urlset>
