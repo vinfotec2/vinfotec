@@ -11,9 +11,9 @@ export const company = {
   email: 'hr@vinfotec.com',
   emailHref: 'mailto:hr@vinfotec.com',
   address: {
-    street: '11535 Park Woods Circle, Suite B2-02',
-    city: 'Alpharetta, GA 30005',
-    country: 'United States',
+    street: '11535 Park Woods Circle, Suite: B2-01',
+    city: 'Alpharetta, GA, 30005',
+    country: 'USA',
   },
   hours: {
     weekdays: 'Monday - Friday: 8am - 5pm',
