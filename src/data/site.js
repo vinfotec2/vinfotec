@@ -35,18 +35,17 @@ export const navLinks = [
   { label: 'FAQ', to: '/faq' },
 ];
 
-export const stats = [
-  { value: '300+', label: 'Projects Delivered' },
-  { value: '98%', label: 'Client Satisfaction' },
-  { value: '25+', label: 'Years Experience' },
-  { value: '99%', label: 'Success Rate' },
-];
+// Hero strip. Kept distinct from `glanceStats` below: both render on the home
+// page, so repeating a figure in the hero and again under "At a Glance" reads
+// as a mistake. `stats` is declared after `services` so the service count can
+// be derived rather than hand-maintained — see the bottom of this file.
 
+// Shown under "At a Glance". Keep these four different from `stats`.
 export const glanceStats = [
-  { icon: 'Trophy', value: '300+', label: 'Projects Delivered', color: 'text-green-600' },
   { icon: 'Users', value: '450+', label: 'Global Experts', color: 'text-blue-600' },
-  { icon: 'Globe', value: '$1.6M+', label: 'Revenue Generated', color: 'text-purple-600' },
-  { icon: 'CircleCheckBig', value: '25+', label: 'Years Experience', color: 'text-orange-600' },
+  { icon: 'Globe', value: '6', label: 'Industries Served', color: 'text-purple-600' },
+  { icon: 'Trophy', value: '$1.6M+', label: 'Revenue Generated', color: 'text-green-600' },
+  { icon: 'Clock', value: '24/7', label: 'Support Coverage', color: 'text-orange-600' },
 ];
 
 // `slug` drives the /services/:slug route; long-form copy for each one lives in
@@ -127,6 +126,15 @@ export const services = [
 ];
 
 export const getService = (slug) => services.find((s) => s.slug === slug);
+
+// Declared here rather than at the top of the file so the service count comes
+// straight from `services` and cannot drift when one is added or removed.
+export const stats = [
+  { value: '300+', label: 'Projects Delivered' },
+  { value: '98%', label: 'Client Satisfaction' },
+  { value: `${services.length}`, label: 'Core Services' },
+  { value: '99%', label: 'Success Rate' },
+];
 
 // `slug` drives the /portfolio/:slug route, `industry` is the label shown
 // above each card title, and `accent` picks the card colour scheme.

@@ -425,7 +425,7 @@ export function PortfolioSection({ showCta = true }) {
 
 export function TestimonialsSection() {
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-20" style={{"display":"none"}}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <SectionHeading eyebrow="Client Testimonials" title="What Our Clients Are Saying" />
