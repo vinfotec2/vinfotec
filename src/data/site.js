@@ -6,8 +6,9 @@ export const company = {
   tagline: 'Innovative technology solutions that transform your digital future.',
   blurb:
     'Innovative technology solutions that transform your digital future. We build secure, scalable, and smart digital products.',
-  phone: '304-216-9092',
-  phoneHref: 'tel:+13042169092',
+  phone: '+1 (312) 581-9069',
+  // tel: links must be digits only, with the country code and no formatting.
+  phoneHref: 'tel:+13125819069',
   email: 'hr@vinfotec.com',
   emailHref: 'mailto:hr@vinfotec.com',
   address: {
